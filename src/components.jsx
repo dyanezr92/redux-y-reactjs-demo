@@ -1,11 +1,19 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addComment } from "app/actions";
 
-const Picture = ({ title, src }) => (
+
+let Picture = ({ title, src, comments }) => (
   <div>
-    <h1 className="text-center">{ title }</h1>
+    <h1 className="text-center">{ title } <small>{comments} comments</small></h1>
     <img src={ src } className="img-thumbnail img-responsive center-block"/>
   </div>
 );
+
+Picture = connect(
+  state => ({ comments: state.comments.length })
+)(Picture);
+
 
 const EmptyMessage = ({ text }) => <p className="alert alert-info">{text}</p>;
 
@@ -75,27 +83,24 @@ class CommentForm extends React.Component {
 };
 
 
-class Comments extends React.Component {
+let Comments = ({ comments, onCommentSubmit }) => (
+  <div>
+    <CommentsList comments={ comments } />
+    <CommentForm onCommentSubmit={ onCommentSubmit } />
+  </div>
+);
 
-  constructor(props) {
-    super(props);
-    this.state = { comments: [] }
-    this.onCommentSubmit = this.onCommentSubmit.bind(this);
-  }
+Comments = connect(
+  state => ({
+    comments: state.comments
+  }),
 
-  onCommentSubmit(comment) {
-    this.setState({ comments: [ ...this.state.comments, comment ] });
-  }
-
-  render() {
-    return (
-      <div>
-        <CommentsList comments={ this.state.comments } />
-        <CommentForm onCommentSubmit={ this.onCommentSubmit } />
-      </div>
-    );
-  }
-}
+  dispatch => ({
+    onCommentSubmit: (comment) => {
+      dispatch(addComment(comment));
+    }
+  })
+)(Comments);
 
 export default class CommentedPicture extends React.Component {
 
