@@ -4,20 +4,18 @@ var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config.js");
 
 new WebpackDevServer(webpack(config), {
-  contentBase: "public/",
   hot: true,
-
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000
-  },
+  publicPath: config.output.publicPath,
+  historyApiFallback: true,
 
   stats: {
     chunkModules: false,
     colors: true
-  }})
-.listen(3030, "0.0.0.0", function (err) {
+  }
+}).listen(3030, "0.0.0.0", function (err) {
   if (err) {
     console.error(err);
   }
+
+  console.log("Listening at http://localhost:3030");
 });

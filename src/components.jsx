@@ -9,12 +9,12 @@ const Picture = ({ title, src }) => (
 
 const EmptyMessage = ({ text }) => <p className="alert alert-info">{text}</p>;
 
-const Comment = ({ comment, author }) =>
-    <blockquote>
-      {comment}
-      <footer>{ author }</footer>
-    </blockquote>
-;
+const Comment = ({ comment, author }) => (
+  <blockquote>
+    {comment}
+    <footer>{ author }</footer>
+  </blockquote>
+);
 
 const CommentsList = ({ comments }) => {
 
@@ -97,9 +97,14 @@ class Comments extends React.Component {
   }
 }
 
-export const CommentedPicture = () => (
-  <div className="col-sm-6">
-    <Picture title="Awesome Finn" src="./finn.gif" />
-    <Comments />
-  </div>
-);
+export default class CommentedPicture extends React.Component {
+
+  render() {
+    return (
+      <div className="col-sm-6">
+        <Picture title="Awesome Finn" src="/static/finn.gif" />
+        <Comments />
+      </div>
+    );
+  }
+}

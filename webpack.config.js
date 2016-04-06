@@ -1,13 +1,19 @@
 /*global require: true, module: true, __dirname: true*/
 var path = require("path");
+var webpack = require("webpack");
 
 module.exports = {
 
-  entry: "./src/main.jsx",
+  entry: [
+    "webpack-dev-server/client?http://0.0.0.0:3030",
+    "webpack/hot/only-dev-server",
+    "./src/main.jsx"
+  ],
 
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "/static/"
   },
 
   module: {
@@ -22,11 +28,8 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "babel",
-        query: {
-          presets: ["es2015", "stage-0", "react"]
-        }
+        loaders: ["react-hot", "babel?presets[]=es2015&presets[]=stage-0&presets[]=react"],
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -36,9 +39,13 @@ module.exports = {
         test: /\.(eot|ttf|woff2?|svg)$/,
         loader: "file"
       }
-
     ]
   },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
 
   resolve: {
     extensions: ["", ".css", ".js", ".jsx"],
