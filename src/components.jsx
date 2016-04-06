@@ -3,15 +3,36 @@ import { connect } from "react-redux";
 import { addComment } from "app/actions";
 
 
-let Picture = ({ title, src, comments }) => (
-  <div>
-    <h1 className="text-center">{ title } <small>{comments} comments</small></h1>
-    <img src={ src } className="img-thumbnail img-responsive center-block"/>
-  </div>
-);
+let Picture = ({ title, src, comments, loading }) => {
+
+  const image = () => {
+    if (loading) {
+      return <img alt="Loading image..."/>;
+    }
+
+    if (src) {
+      return <img src={ src } className="img-thumbnail img-responsive center-block"/>;
+    }
+
+    return null;
+  }
+
+  return (
+    <div>
+      <h1 className="text-center">{ title } <small>{comments} comments</small></h1>
+      { image() }
+    </div>
+  );
+};
 
 Picture = connect(
-  state => ({ comments: state.comments.length })
+  state => {
+    return ({
+      src: state.image.src,
+      loading: state.image.loading,
+      comments: state.comments.length
+    })
+  }
 )(Picture);
 
 

@@ -6,6 +6,7 @@ import thunk from "redux-thunk";
 import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import appReducer from "app/reducers";
+import { fetchImage } from "app/actions";
 import CommentedPicture from "app/components";
 
 
@@ -30,3 +31,5 @@ render(
   </Provider>,
   document.getElementById("app")
 );
+
+store.dispatch(fetchImage("/static/finn.gif"));
