@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoMessage text="Alert text!"/> render() renders the info message 1`] = `
+<p
+  className="alert alert-info"
+>
+  Alert text!
+</p>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> render() renders the App 1`] = `
+<Col
+  w={12}
+>
+  <Connect(HeaderWithPicture)
+    src="finn.gif"
+    title="Awesome Finn"
+  />
+  <Connect(UserTextSection) />
+  <Connect(UserTextSection) />
+</Col>
+`;

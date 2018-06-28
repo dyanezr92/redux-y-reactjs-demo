@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderWithPicture title="Awesome Finn" src={ finn } /> render() renders the header 1`] = `
+<div>
+  <h1
+    className="text-center"
+  >
+    Awesome Finn
+  </h1>
+  <TitleCounter
+    elementsName="comments"
+    numElements={1}
+  />
+  <TitleCounter
+    elementsName="complaints"
+    numElements={2}
+  />
+  <img
+    alt="Header"
+    className="img-thumbnail img-responsive center-block"
+    src="finn.gif"
+  />
+</div>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List elements={[]} emptyMessage="Empty!"/> render() renders the list 1`] = `
+<div>
+  <InfoMessage
+    text="Empty!"
+  />
+</div>
+`;
+
+exports[`<List elements={[a: "a", b: "b"]} emptyMessage="Empty!"/> render() renders the list 1`] = `
+<div>
+  Test children
+</div>
+`;

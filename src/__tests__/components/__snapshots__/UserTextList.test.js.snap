@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserTextList onUserTextSubmit={ console.log } elementName="comment" /> render() renders the user text list 1`] = `
+<List
+  elements={
+    Array [
+      Object {
+        "author": "Finn",
+        "id": 1,
+        "text": "Awesome comment!",
+      },
+    ]
+  }
+  emptyMessage="No comments, dude!"
+  onDeleteElementClick={[Function]}
+>
+  <UserText
+    author="Finn"
+    id={1}
+    key="1"
+    onDeleteClick={[Function]}
+    text="Awesome comment!"
+  />
+</List>
+`;

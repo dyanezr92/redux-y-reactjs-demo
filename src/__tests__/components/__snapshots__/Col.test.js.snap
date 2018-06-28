@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Col w="10" style="background: red;"/> render() renders the col 1`] = `
+<div
+  className="col-sm-10"
+  style={
+    Object {
+      "background": "red",
+    }
+  }
+/>
+`;
+
+exports[`<Col w="10"/> render() renders the col 1`] = `
+<div
+  className="col-sm-10"
+/>
+`;

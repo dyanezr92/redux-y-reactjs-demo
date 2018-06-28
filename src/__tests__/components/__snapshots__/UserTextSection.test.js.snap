@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserTextSection /> render() renders the user text section 1`] = `
+<Col
+  style={
+    Object {
+      "display": "inline-block",
+      "margin": 20,
+    }
+  }
+  w={5}
+>
+  <UserTextList
+    elementName="comments"
+    elements={
+      Array [
+        Object {
+          "author": "Finn",
+          "id": 1,
+          "text": "Awesome comment!",
+        },
+      ]
+    }
+    onDeleteClick={[Function]}
+  />
+  <UserTextForm
+    elementName="comments"
+    onUserTextSubmit={[Function]}
+  />
+</Col>
+`;

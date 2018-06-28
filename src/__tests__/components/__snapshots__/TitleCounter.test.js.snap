@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TitleCounter numElements={ 5 } elementsName="comments"/> render() renders the title counter 1`] = `
+<h3
+  className="text-center"
+>
+  (
+  5
+   
+  comments
+  )
+</h3>
+`;
