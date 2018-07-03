@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UserText key={1} text="Awesome comment" author="Finn" id={1} onDeleteClick={console::log} /> render() renders the user text 1`] = `
+exports[`<UserText ... /> render() renders the user text 1`] = `
 <blockquote>
   <input
     type="hidden"

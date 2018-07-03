@@ -7,7 +7,12 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "react-scripts": "^1.1.4",
-    "redux-mock-store": "^1.5.3"
+    "redux-mock-store": "^1.5.3",
+
+    "eslint": "4.19.1",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "prettier": "1.13.4"
   },
   "dependencies": {
     "ajv": "^6.5.1",
@@ -25,7 +30,7 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "4.10.0",
+    "eslint": "4.19.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
@@ -108,6 +113,83 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "plugins": [
+      "react",
+      "import",
+      "prettier"
+    ],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "settings": {
+      "ecmascript": 6,
+      "jsx": true,
+      "import/resolver": {
+        "node": {
+          "paths": [
+            "./src/"
+          ],
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".json"
+          ]
+        }
+      }
+    },
+    "rules": {
+      "spaced-comment": 0,
+      "react/prop-types": 0,
+      "init-declarations": 0,
+      "no-confusing-arrow": 0,
+      "no-invalid-this": 0,
+      "valid-jsdoc": 0,
+      "import/no-unresolved": 0,
+      "prefer-template": 2,
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "ignoreRestSiblings": true,
+          "varsIgnorePattern": "_",
+          "argsIgnorePattern": "_"
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "all",
+          "singleQuote": false,
+          "printWidth": 120
+        }
+      ],
+      "react/no-danger": 0
+    },
+    "globals": {
+      "$": true,
+      "mundoR": true,
+      "rFogarDixitalAppData": true,
+      "process": true
+    }
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": false,
+    "printWidth": 120
   }
 }
