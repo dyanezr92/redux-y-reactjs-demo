@@ -180,12 +180,6 @@
       ],
       "react/no-danger": 0
     },
-    "globals": {
-      "$": true,
-      "mundoR": true,
-      "rFogarDixitalAppData": true,
-      "process": true
-    }
   },
   "prettier": {
     "trailingComma": "all",
